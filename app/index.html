@@ -37,12 +37,16 @@
           </div>
 
           <div id="todoList" class="list-group">
-            <div ng-repeat="todo in todoList" class="list-group-item">
-              <label class="description" ng-class="{'strike': todo.done}">
+            <div ng-repeat="todo in todoList"
+                 class="list-group-item todo">
+              <label class="description"
+                     ng-class="{'strike': todo.done}">
                 <input type="checkbox" ng-model="todo.done">
                 {{ todo.desc }}
               </label>
-              <button type="button" ng-click="deleteTodo($index)" class="btn btn-danger btn-sm">Delete</button>
+              <button type="button"
+                      ng-click="deleteTodo($index)"
+                      class="btn btn-danger btn-sm">Delete</button>
             </div>
           </div>
 
@@ -55,7 +59,10 @@
                       '1': '1 item left',
                       'other': '{} items left'
                     }"></ng-pluralize>
-              <button id="clearTasks" ng-click="clearCompleteTodo()" class="btn btn-primary">
+              <button id="clearTasks"
+                      ng-if="pendingCount < todoList.length"
+                      ng-click="clearCompleteTodo()"
+                      class="btn btn-primary">
                 Clear completed {{ todoList.length - pendingCount }}
               </button>
             </h4>
@@ -79,6 +86,7 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="app.js"></script>
   <script src="controllers.js"></script>
   <script src="components/version/version.js"></script>

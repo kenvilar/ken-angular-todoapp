@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('kenTodoApp', [
-        'kenTodoApp.controller'
+        'kenTodoApp.controller',
+	    'ngAnimate',
     ]);

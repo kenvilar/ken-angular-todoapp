@@ -28,3 +28,22 @@
 #clearTasks {
 	float: right;
 }
+.todo {
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	-ms-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+	overflow: hidden;
+}
+.todo.ng-leave.ng-leave-active,
+.todo.ng-enter {
+	height: 0;
+	padding: 0 15px;
+}
+
+.todo.ng-leave,
+.todo.ng-enter.ng-enter-active {
+	height: 50px;
+	padding: 10px 15px;
+}
