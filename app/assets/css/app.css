@@ -25,3 +25,6 @@
 #todoList .list-group-item:hover {
 	cursor: pointer;
 }
+#clearTasks {
+	float: right;
+}

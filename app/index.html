@@ -55,6 +55,9 @@
                       '1': '1 item left',
                       'other': '{} items left'
                     }"></ng-pluralize>
+              <button id="clearTasks" ng-click="clearCompleteTodo()" class="btn btn-primary">
+                Clear completed {{ todoList.length - pendingCount }}
+              </button>
             </h4>
           </span>
         </div>

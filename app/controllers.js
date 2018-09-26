@@ -37,5 +37,9 @@ app.controller('todoController', ['$scope', '$filter', function($scope, $filter)
 
 	$scope.$watch('todoList', function() {
 		$scope.pendingCount = $filter('filter')($scope.todoList, {done: false}).length;
-	}, true)
+	}, true);
+
+	$scope.clearCompleteTodo = () => {
+		$scope.todoList = $filter('filter')($scope.todoList, {done: false});
+	};
 }]);
