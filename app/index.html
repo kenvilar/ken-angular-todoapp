@@ -11,29 +11,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 
-  <div ng-controller="todoController">
+  <div class="container">
 
-    <h1>What needs to be done?</h1>
+    <div class="row-fluid">
 
-    <form action="" ng-submit="addTodo()">
-      <input type="text" ng-model="newTodo">
-      <button type="submit">Add Todo</button>
-      <br/>
-    </form>
+      <div ng-controller="todoController">
+        <div class="col-md-8 offset-md-2">
+          <div class="jumbotron">
+            <h1>What needs to be done?</h1>
 
-    <div id="todoList">
-      <div ng-repeat="todo in todoList" ng-class="{'strike': todo.done}">
-        <label class="description">
-          <input type="checkbox" ng-model="todo.done">
-          {{ todo.desc }}
-        </label>
-        <button type="button" ng-click="deleteTodo($index)">Delete</button>
+            <form action="" ng-submit="addTodo()">
+              <div class="input-group input-group-lg">
+                <input type="text" ng-model="newTodo" class="form-control input-group-lg">
+                <span class="input-group-append btn-group-lg">
+                  <button type="submit" class="btn btn-secondary">Add Todo</button>
+                </span>
+              </div>
+            </form>
+          </div>
+
+          <div id="todoList" class="list-group">
+            <div ng-repeat="todo in todoList" class="list-group-item">
+              <label class="description" ng-class="{'strike': todo.done}">
+                <input type="checkbox" ng-model="todo.done">
+                {{ todo.desc }}
+              </label>
+              <button type="button" ng-click="deleteTodo($index)" class="btn btn-danger btn-sm">Delete</button>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
 
   </div>
