@@ -1,9 +1,11 @@
-# Created by .ignore support plugin (hsz.mobi)
+# Custom
 logs/*
 !.gitkeep
 bower_components/
 tmp
 .DS_Store
+package-lock.json
+
 ### Node template
 # Logs
 logs
