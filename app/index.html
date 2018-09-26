@@ -45,6 +45,18 @@
               <button type="button" ng-click="deleteTodo($index)" class="btn btn-danger btn-sm">Delete</button>
             </div>
           </div>
+
+          <span id="todo-count">
+            <h4>
+              <ng-pluralize
+                      count="pendingCount"
+                      when="{
+                      '0': 'No item left',
+                      '1': '1 item left',
+                      'other': '{} items left'
+                    }"></ng-pluralize>
+            </h4>
+          </span>
         </div>
       </div>
 
