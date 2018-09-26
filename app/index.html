@@ -27,7 +27,7 @@
     </form>
 
     <div id="todoList">
-      <div ng-repeat="todo in todoList">
+      <div ng-repeat="todo in todoList" ng-class="{'strike': todo.done}">
         <label class="description">
           <input type="checkbox" ng-model="todo.done">
           {{ todo.desc }}
@@ -39,7 +39,10 @@
   </div>
 
   <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser.
+        Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
   <![endif]-->
 
   <!-- In production use:
